@@ -15,15 +15,15 @@ body a {
 .bar-grids{
 	padding: 6em 5em;
 }
-.mid_services_img {
-    /*background: url(../images/banner2.jpg) no-repeat 0 0;*/
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    min-height: 547px;
-}
+/*.mid_services_img {*/
+    /*!*background: url(../images/banner2.jpg) no-repeat 0 0;*!*/
+    /*background-size: cover;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*min-height: 547px;*/
+/*}*/
 .news-right p{
     line-height: 1.9em;
 	color:#888;
