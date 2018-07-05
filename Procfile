@@ -1,1 +1,1 @@
-web: gunicorn klife.wsgi --log-file-
+web: gunicorn klife.wsgi
