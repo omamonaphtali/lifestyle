@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from .views import (product_list,
                     product_create,
                     product_detail,
@@ -18,4 +20,5 @@ urlpatterns = [
     url(r'(?P<pk>\d+)/edit/$', product_update, name='edit'),
     url(r'contacts/', contacts, name='contacts'),
     url(r'gallery/', gallery, name='gallery'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
