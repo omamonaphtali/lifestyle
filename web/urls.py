@@ -1,6 +1,6 @@
 from django.conf import settings
-from django.conf.urls import url
 from django.conf.urls.static import static
+from django.urls import path
 from .views import (product_list,
                     product_create,
                     product_detail,
@@ -12,13 +12,14 @@ from .views import (product_list,
 
 app_name = 'webapp'
 urlpatterns = [
-    url(r'', index_view, name='home'),
-    url(r'add/', product_create, name='add'),
-    url(r'products/', product_list, name='products'),
-    url(r'(?P<cat>)/$', product_category, name='category'),
-    url(r'(?P<pk>\d+)/$', product_detail, name='detail'),
-    url(r'(?P<pk>\d+)/edit/$', product_update, name='edit'),
-    url(r'contacts/', contacts, name='contacts'),
-    url(r'gallery/', gallery, name='gallery'),
+    path(r'', index_view, name='home'),
+    path(r'add/', product_create, name='add'),
+    path(r'products/', product_list, name='products'),
+    # path(r'(?P<cat>)/$', product_category, name='category'),
+    path(r'products/<cat>/', product_category, name='category'),
+    path(r'products/<int:pk>/', product_detail, name='detail'),
+    path(r'products/<int:pk>/edit/', product_update, name='edit'),
+    path(r'contacts/', contacts, name='contacts'),
+    path(r'gallery/', gallery, name='gallery'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

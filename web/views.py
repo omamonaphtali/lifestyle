@@ -28,7 +28,7 @@ def index_view(request):
 
 def contacts(request):
     context = {
-        "title": "Home"
+        "title": "Contacts"
     }
     return render(request, 'contacts.html', context)
 
@@ -75,7 +75,7 @@ def product_detail(request, pk):
         queryset = paginator.page(1)
     except EmptyPage:
         queryset = paginator.page(paginator.num_pages)
-    instance = get_object_or_404(Product, id=pk)
+    instance = get_object_or_404(Product, pk=pk)
     # share_string = quote(instance.content)
     context = {
         "title": "Detail",
@@ -113,6 +113,7 @@ def product_list(request):
     return render(request, 'shop.html', context)
 
 # review this and debug
+
 
 def product_category(request, cat):
     #     queryset_list = Product.objects.filter(tag=cat)  # .order_by("-timestamp")

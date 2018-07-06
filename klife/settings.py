@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['0.0.0.0', 'klifestyle.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    # 'web.apps.WebConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,7 +140,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'staticfiles'),
+    # os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')

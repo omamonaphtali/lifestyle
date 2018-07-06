@@ -1,19 +1,28 @@
 {% load static %}
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" 
+      type="image/png" 
+      href="{% static 'web/images/favicon.png' %}">
     <title>KENYAN LIFESTYLE|{{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); },
         false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Custom Theme files -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet">
 {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
-    <link rel="stylesheet" href="{% static 'css/netflixCarousel.css' %}">
+{#    <link rel="stylesheet" href="{% static 'web/css/netflixCarousel.css' %}">#}
+    <link rel="stylesheet" href="{% static 'web/css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/easy-responsive-tabs.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/jquery-ui1.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/shop.css' %}">
+
     {% block stylesheet %}{% endblock stylesheet %}
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <link href="{% static 'web/css/style.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- //Custom Theme files -->
     <!-- js -->
@@ -24,19 +33,77 @@
     <!-- //web-fonts -->
 </head>
 <body class="container-fluid" id="home">
-    {% block content %}{% endblock %}
+
+    {% block content %}{% endblock content %}
+
     <div class="row text-center footer">
         <p>&copy; 2018. Kenyan Lifestyle. All rights reserved.</p>
     </div>
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <!-- <script src="{% static 'js/bootstrap.js' %}"></script> -->
-{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
-    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'web/js/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     {% block js %}{% endblock js %}
+
+    <!-- cart js -->
+    <script type="text/javascript" src="{% static 'web/js/minicart.js' %}"></script>
+    <script type="text/javascript">
+		shoe.render();
+		shoe.cart.on('shoe_checkout', function (evt) {
+			let items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+	</script>
+    <!-- //cart js -->
+    <!-- image zoom js -->
+    <script type="text/javascript" src="{% static 'web/js/imagezoom.js' %}"></script>
+    <!-- //image zoom js -->
+    <!-- responsive tabs js -->
+    <script type="text/javascript" src="{% static 'web/js/easy-responsive-tabs.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					let $tab = $(this);
+					let $info = $('#tabInfo');
+					let $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+    </script>
+	<!-- FlexSlider -->
+	<script type="text/javascript" src="{% static 'web/js/jquery.flexslider.js' %}"></script>
+	<script type="text/javascript">
+		// Can also be used with $(document).ready()
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+			});
+		});
+	</script>
+	<!-- //FlexSlider-->
+
 	<!-- start-smoth-scrolling -->
-    <script src="{% static 'js/move-top.js' %}"></script>
-    <script src="{% static 'js/easing.js' %}"></script>
+    <script type="text/javascript" src="{% static 'web/js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'web/js/easing.js' %}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
