@@ -1,6 +1,6 @@
 from django.urls import reverse
 from django.db import models
-from django.db.models import lookups
+# from django.db.models import lookups
 from django.db.models.signals import pre_save
 
 from django.utils.text import slugify
@@ -87,3 +87,20 @@ class Review(models.Model):
 #         return '%s <> %s' % (lhs, rhs), params
 #
 #     CategoryFilter.register_lookup(CategoryFilter)
+
+
+class Photo(models.Model):
+    name = models.CharField(max_length=50, default='image name')
+    image = models.ImageField(upload_to=upload_location,
+                              null=True, blank=True,
+                              default='img.jpg')
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("products:gallery", kwargs={"pk": self.id})
+
+    class Meta:
+        ordering = ["-id", "-timestamp"]

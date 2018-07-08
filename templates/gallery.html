@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% load cloudinary %}
+
+{% block content %}
+    <div class="mini">
+    {% include 'includes/navbar.html' %}
+    </div>
+
+    <div class="container row">
+        <div id="profiles">
+            {% for object in objects %}
+            <div class="card col-md-4">
+                <div class="text-center">
+                    <p>{% cloudinary object.emp_image.name  width=200 height=200 %}</p>
+                    <img src="{{ object.get_absolute_url }}" class="img-responsive" alt="">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'products:upload' %}">Add Images</a>
+{% endblock %}

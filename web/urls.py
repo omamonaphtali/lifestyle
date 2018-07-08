@@ -1,5 +1,3 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 from .views import (product_list,
                     product_create,
@@ -8,6 +6,7 @@ from .views import (product_list,
                     product_update,
                     index_view,
                     contacts,
+                    image_upload,
                     gallery)
 
 app_name = 'webapp'
@@ -21,5 +20,5 @@ urlpatterns = [
     path(r'products/<int:pk>/edit/', product_update, name='edit'),
     path(r'contacts/', contacts, name='contacts'),
     path(r'gallery/', gallery, name='gallery'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
-              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path(r'upload/', image_upload, name='upload'),
+]

@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import ProductForm
-from .models import Product
+from .models import Product, Photo
 
 
 def index_view(request):
@@ -34,10 +34,29 @@ def contacts(request):
 
 
 def gallery(request):
+    querylist = Photo.objects.all().order_by('-id')
     context = {
-        "title": "Home"
+        "title": "Gallery",
+        "object": querylist,
     }
     return render(request, 'gallery.html', context)
+
+
+def image_upload(request):
+    if not request.user.is_staff or not request.user.is_superuser:
+        raise Http404
+    form = ProductForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Successfully uploaded")
+        return HttpResponseRedirect(instance.get_absolute_url())
+
+    context = {
+        "title": "Image Upload",
+        "form": form
+    }
+    return render(request, 'uploads.html', context)
 
 
 def product_create(request):

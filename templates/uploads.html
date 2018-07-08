@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="mini-banner">
+        {% include 'includes/navbar.html' %}
+    </div>
+    <form class="form-group" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+        <label for="">image</label>
+        <input type="file" />
+        <input type="submit" value="Add Image" />
+    </form>
+{% endblock %}
