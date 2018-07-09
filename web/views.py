@@ -34,10 +34,27 @@ def contacts(request):
 
 
 def gallery(request):
-    querylist = Photo.objects.all().order_by('-id')
+    queryset_list = Photo.objects.all().filter(publish=True)
+    # search query
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query)
+        ).distinct()
+    paginator = Paginator(queryset_list, 12)  # Show ## items per page
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        queryset = paginator.page(1)
+    except EmptyPage:
+        queryset = paginator.page(paginator.num_pages)
     context = {
         "title": "Gallery",
-        "object": querylist,
+        "object_list": queryset,
+        "page_request_var": page_request_var
     }
     return render(request, 'gallery.html', context)
 
@@ -50,6 +67,12 @@ def image_upload(request):
         instance = form.save(commit=False)
         instance.save()
         messages.success(request, "Successfully uploaded")
+        # context = {
+        #     "title": "Gallery",
+        #     "message": 'Image Uploaded Successfully. It will be published once approved. Thank you for shopping with '
+        #                'us :)'
+        # }
+        # return render(request, 'gallery.html', context)
         return HttpResponseRedirect(instance.get_absolute_url())
 
     context = {
@@ -115,7 +138,7 @@ def product_list(request):
             Q(title__icontains=query) |
             Q(content__icontains=query)
         ).distinct()
-    paginator = Paginator(queryset_list, 4)  # Show 4 items per page
+    paginator = Paginator(queryset_list, 6)  # Show 4 items per page
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
     try:
@@ -135,33 +158,29 @@ def product_list(request):
 
 
 def product_category(request, cat):
-    #     queryset_list = Product.objects.filter(tag=cat)  # .order_by("-timestamp")
-    #     # search query
-    #     query = request.GET.get("q")
-    #     if query:
-    #         queryset_list = queryset_list.filter(
-    #             Q(title__icontains=query) |
-    #             Q(content__icontains=query)
-    #         ).distinct()
-    #     paginator = Paginator(queryset_list, 9)  # Show 9 items per page
-    #     page_request_var = 'page'
-    #     page = request.GET.get(page_request_var)
-    #     try:
-    #         queryset = paginator.page(page)
-    #     except PageNotAnInteger:
-    #         queryset = paginator.page(1)
-    #     except EmptyPage:
-    #         queryset = paginator.page(paginator.num_pages)
-    #     instance = get_object_or_404(Product, tag=cat)
-    #     # share_string = quote(instance.content)
-        context = {
-            "title": "Detail",
-                # "object_list": queryset,
-                # "page_request_var": page_request_var,
-                # "product": instance,
-                # # "share_string": share_string
-        }
-        return render(request, 'shop.html', context)
+    queryset_list = Product.objects.all().filter(tag=cat)
+    # search query
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query)
+        ).distinct()
+    paginator = Paginator(queryset_list, 12)  # Show ## items per page
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        queryset = paginator.page(1)
+    except EmptyPage:
+        queryset = paginator.page(paginator.num_pages)
+    context = {
+        "title": cat,
+        "object_list": queryset,
+        "page_request_var": page_request_var
+    }
+    return render(request, 'shop.html', context)
 
 
 def product_update(request, pk=None):

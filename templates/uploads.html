@@ -1,13 +1,53 @@
-{% extends 'base_layout.html' %}
-{% load static %}
-
+{% extends 'base_layout.html' %}{% load static %}
 {% block content %}
+    <style>
+    .btn-primary{
+        display: inline;
+        margin-right: 20px;
+    }
+    </style>
     <div class="mini-banner">
         {% include 'includes/navbar.html' %}
     </div>
-    <form class="form-group" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
-        <label for="">image</label>
-        <input type="file" />
-        <input type="submit" value="Add Image" />
-    </form>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form class="form-horizontal" method="post" action="{% url 'products:upload' %}"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="col-md-11 col-md-offset-1">
+                        <label for="image" class="text-left">Choose an image</label>
+                    </div>
+                    <div class="col-md-11 col-md-offset-1">
+                        <input type="file" id="image" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2 col-md-offset-1">
+                        <input type="submit" class="btn btn-primary" value="Add Image" />
+                    </div>
+                    <div class="col-sm-2 col-md-offset-1">
+                        <a href="{% url 'products:gallery' %}" class="btn btn-primary">Go to Gallery</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- shop the look -->
+    <div class="row text-center" id="look">
+        <h3>SHOP THE LOOK </h3>
+        <div class="col-xs-3 look-container">
+            <img src="{% static 'images/IMG_8890.jpg' %}" alt="shop the look" class="img-responsive">
+        </div>
+        <div class="col-xs-3 look-container">
+            <img src="{% static 'images/IMG_8922.jpg' %}" alt="shop the look" class="img-responsive">
+        </div>
+        <div class="col-xs-3 look-container">
+            <img src="{% static 'images/IMG_8847.jpg' %}" alt="shop the look" class="img-responsive">
+        </div>
+        <div class="col-xs-3 look-container">
+            <img src="{% static 'images/IMG_8971.jpg' %}" alt="shop the look" class="img-responsive">
+        </div>
+    </div>
 {% endblock %}

@@ -95,6 +95,7 @@ class Photo(models.Model):
                               null=True, blank=True,
                               default='img.jpg')
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    publish = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
