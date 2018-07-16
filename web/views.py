@@ -212,3 +212,10 @@ def product_delete(request, pk=None):
     # }
     messages.success(request, "Successfully deleted")
     return redirect("list")
+
+
+def checkout(request):
+    context = {
+        "title": "Checkout"
+    }
+    return render(request, 'checkout.html', context)
