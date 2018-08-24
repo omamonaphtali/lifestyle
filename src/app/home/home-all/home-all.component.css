@@ -1,0 +1,11 @@
+#banner {
+    min-height: 500px;
+    height: 500px;
+    width: 100%;
+    background-color: whitesmoke;
+}
+@media screen and (min-width:577px) {
+    .col-md-4 {
+        margin-top: 10px;
+    }
+}

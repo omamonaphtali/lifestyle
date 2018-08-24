@@ -1,0 +1,128 @@
+@import "~font-awesome/css/font-awesome.css";
+a:hover {
+    cursor: pointer;
+}
+/* =====================
+        BANNER
+========================*/
+.social-top {
+    justify-content: center;
+    background-color: white;
+}
+.social-top .nav-link {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+#banner {
+    max-height: 300px;
+    width: 100%;
+    overflow: hidden;
+    background: whitesmoke url(https://res.cloudinary.com/jaredomamo/image/upload/v1534851475/kenyan%20lifestyle/IMG_8836.jpg) cover center no-repeat fixed;
+}
+.navbar .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.navbar .dropdown-menu {
+    background-color: #c0c0c0;
+}
+.navbar .nav-link, .navbar .dropdown-item {
+    align-self: center;
+}
+
+/* =====================
+        SIDE NAV
+========================*/
+.side-nav .nav {
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+}
+.side-nav nav .nav-link {
+    margin: 10px 5px;
+    padding: 5px;
+    border: 2px blue solid;
+    border-radius: 5px;
+    color: blue;
+    font-weight: bold;
+}
+.side-nav nav .nav-link:hover,
+.side-nav nav .nav-link:active {
+    background-color: blue;
+    color: white;
+}
+/* =====================
+        MAIN CONTAINER
+========================*/
+.card {
+    margin-top: 5px;
+}
+.card-img-top {
+    max-height: 300px;
+}
+/* =====================
+        FOOTER
+========================*/
+.footer {
+    width: 99%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.nav-footer ul {
+    list-style-type: none;
+}
+.nav-footer ul .nav-link {
+    color: white;
+    padding-left: 5px;
+}
+.nav-footer ul .nav-link:hover {
+    color: whitesmoke;
+}
+.copyright {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-left: 20px;
+}
+
+
+/* =====================
+        LAPTOP SCREENS
+========================*/
+@media screen and (min-width:421px) {
+    #banner {
+        max-height: 300px;
+    }
+}
+@media screen and (min-width:577px) {
+    .navbar .dropdown {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+    .card-img-top {
+        max-height: 400px;
+    }
+}
+@media screen and (min-width:945px) {
+    .side-nav nav {
+        flex-direction: column;
+        top: 120px;
+        left: 10px;
+       
+        position: fixed;
+    }
+    .col-md-4 {
+        margin-top: 10px;
+    }
+    .nav-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+}
