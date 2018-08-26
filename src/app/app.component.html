@@ -1,59 +1,59 @@
-<div class="sticky-top">
-<nav class="nav nav-justified social-top">
-  <a class="nav-link" routerLink="#"><i class="fa fa-phone"></i> </a>
-  <a class="nav-link" routerLink="#"><i class="fa fa-instagram"></i> </a>
-  <a class="nav-link" routerLink="#"><i class="fa fa-facebook"></i> </a>
-  <a class="nav-link" routerLink="#"><i class="fa fa-twitter"></i> </a>
-</nav>
+<div class="nav-top sticky-top" id="navbar">
+  <nav class="nav nav-justified social-top">
+    <a class="nav-link" routerLink="#"><i class="fa fa-phone"></i> </a>
+    <a class="nav-link" routerLink="#"><i class="fa fa-instagram"></i> </a>
+    <a class="nav-link" routerLink="#"><i class="fa fa-facebook"></i> </a>
+    <a class="nav-link" routerLink="#"><i class="fa fa-twitter"></i> </a>
+  </nav>
 
-<nav class="navbar static-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/">KENYAN LIFESTYLE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="mainNav" [ngClass]="{ 'show': navbarOpen }">
-    <div class="nav nav-pills nav-fill">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleMen()">
-            MEN
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMen"[ngClass]="{ 'show': menOpen }">
-            <a class="dropdown-item" routerLink="/men/tops" (click)="toggleNavbar()">Tops</a>
-            <a class="dropdown-item" routerLink="/men/pants" (click)="toggleNavbar()">Pants</a>
-            <a class="dropdown-item" routerLink="/men/accessories" (click)="toggleNavbar()">Accessories</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdownWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleWomen()">
-            WOMEN
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownWomen" [ngClass]="{ 'show': womenOpen }">
-            <a class="dropdown-item" routerLink="/women/tops" (click)="toggleNavbar()">Tops</a>
-            <a class="dropdown-item" routerLink="/women/pants" (click)="toggleNavbar()">Pants</a>
-            <a class="dropdown-item" routerLink="/women/accessories" (click)="toggleNavbar()">Accessories</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownKids" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleKids()">
-            KIDS
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownKids" [ngClass]="{ 'show': kidsOpen }">
-            <a class="dropdown-item" routerLink="/kids/tops" (click)="toggleNavbar()">Tops</a>
-            <a class="dropdown-item" routerLink="/kids/pants" (click)="toggleNavbar()">Pants</a>
-            <a class="dropdown-item" routerLink="/kids/accessories" (click)="toggleNavbar()">Accessories</a>
-          </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/gallery"  routerLinkActive="active" (click)="toggleNavbar()">GALLERY</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/contacts"  routerLinkActive="active" (click)="toggleNavbar()">CONTACT US</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/">KENYAN LIFESTYLE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav" [ngClass]="{ 'show': navbarOpen }">
+      <div class="nav nav-pills nav-fill">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleMen()">
+              MEN
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMen"[ngClass]="{ 'show': menOpen }">
+              <a class="dropdown-item" routerLink="/men/tops" (click)="toggleNavbar()">Tops</a>
+              <a class="dropdown-item" routerLink="/men/pants" (click)="toggleNavbar()">Pants</a>
+              <a class="dropdown-item" routerLink="/men/accessories" (click)="toggleNavbar()">Accessories</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdownWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleWomen()">
+              WOMEN
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownWomen" [ngClass]="{ 'show': womenOpen }">
+              <a class="dropdown-item" routerLink="/women/tops" (click)="toggleNavbar()">Tops</a>
+              <a class="dropdown-item" routerLink="/women/pants" (click)="toggleNavbar()">Pants</a>
+              <a class="dropdown-item" routerLink="/women/accessories" (click)="toggleNavbar()">Accessories</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownKids" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active" (click)="toggleKids()">
+              KIDS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownKids" [ngClass]="{ 'show': kidsOpen }">
+              <a class="dropdown-item" routerLink="/kids/tops" (click)="toggleNavbar()">Tops</a>
+              <a class="dropdown-item" routerLink="/kids/pants" (click)="toggleNavbar()">Pants</a>
+              <a class="dropdown-item" routerLink="/kids/accessories" (click)="toggleNavbar()">Accessories</a>
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/gallery"  routerLinkActive="active" (click)="toggleNavbar()">GALLERY</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/contacts"  routerLinkActive="active" (click)="toggleNavbar()">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </div>
 
 <router-outlet></router-outlet>
@@ -86,3 +86,16 @@
     <p>Designed with <span class="fa fa-heart" style="color: red"></span> by <a href="https://weib.herokuapp.com">Weib Solutions</a></p>
   </div>
 </div>
+
+<!-- <script type="text/javascript">
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {  
+      var currentScrollpos = window.pageYOffset;
+      if(prevScrollpos > currentScrollpos) {
+          document.getElementById("navbar").style.top = "0";
+      } else {
+          document.getElementById("navbar").style.top = "-100px";
+      }
+      prevScrollpos = currentScrollpos;  
+  }  
+</script> -->

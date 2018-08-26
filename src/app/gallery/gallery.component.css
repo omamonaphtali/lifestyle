@@ -1,0 +1,23 @@
+.column {
+    width: 50%;
+}
+.card {
+    width: 100%;
+    margin-top: 5px;
+}
+@media only screen and (min-width:600px) {
+    .column {
+        width: 33%;
+    }
+}
+@media only screen and (min-width:960px) {
+    .column {
+        width: 25%;
+    }
+}
+/* @media screen and (max-width:420px) {
+    .col-md-3 {
+        width: 48%;
+        width: auto;
+    }
+} */
