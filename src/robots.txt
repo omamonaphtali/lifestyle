@@ -1,0 +1,9 @@
+User-agents: *
+Allow: /home/
+Allow: /men/
+Allow: /women/
+Allow: /kids/
+Allow: /gallery/
+Allow: /tops/
+Allow: /pants/
+Allow: /accessories/

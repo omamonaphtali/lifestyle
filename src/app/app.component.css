@@ -4,6 +4,17 @@
 #mainNav {
     flex-direction: column!important;
 }
+.navbar-brand,
+.nav-link {
+    border-bottom: 2px transparent solid !important;
+    font-weight: 600;
+    /* transition: border-bottom 1.5s linear; */
+}
+.nav-link-active,
+.nav-link:hover {
+    border-bottom: #ffffff 2px !important;
+    color: grey;
+}
 
 @media screen and (min-width:577px) {
     #mainNav {

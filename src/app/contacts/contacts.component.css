@@ -1,0 +1,38 @@
+.contact-header {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.75);
+    color: white;
+}
+.contact-body {
+    width: 100%;
+    margin: auto;
+    background-color: rgb(8, 142, 145);
+    align-items: center;
+    /* justify-content: center; */
+    min-height: 250px;
+    color: white;
+}
+.contact-body div {
+    text-align: center;
+}
+.contact-body .fas {
+    font-size: 35px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+.contact-body a {
+    color: white;
+}
+.contact-map iframe {
+    width: 100% !important;
+    height: 500px !important;
+}

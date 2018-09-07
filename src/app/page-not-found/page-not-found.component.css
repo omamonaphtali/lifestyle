@@ -1,0 +1,22 @@
+.page-body {
+    width: 100%;
+    margin: auto;
+    background-color: rgb(8, 142, 145);
+    align-items: center;
+    /* justify-content: center; */
+    min-height: 250px;
+    color: white;
+}
+.page-body ul li {
+    list-style-type: none;
+}
+.page-body .nav-link {
+    color: white;
+    font-weight: 500;
+}
+.page-body .nav-link:hover {
+    color: whitesmoke;
+}
+.page-body img {
+    width: 100%;
+}

@@ -10,6 +10,8 @@ import { WomenModule } from './women/women.module';
 import { KidsModule } from './kids/kids.module';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     HomeModule,
     MenModule,
     WomenModule,
-    KidsModule
+    KidsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

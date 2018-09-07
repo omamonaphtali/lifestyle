@@ -7,6 +7,28 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="/">KENYAN LIFESTYLE</a>
+    <button class="navbar-toggler" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav" [ngClass]="{ 'show': navbarOpen }">
+      <div class="nav nav-pills nav-fill">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" routerLink="/men/" 
+          (click)="toggleNavbar()" routerLinkActive="nav-link-active">MEN</a>
+          <a class="nav-item nav-link" routerLink="/women/" 
+          (click)="toggleNavbar()">WOMEN</a>
+          <a class="nav-item nav-link" routerLink="/kids/" 
+          (click)="toggleNavbar()">KIDS</a>
+          <a class="nav-item nav-link" routerLink="/gallery/" 
+          (click)="toggleNavbar()">GALLERY</a>
+          <a class="nav-item nav-link" routerLink="/contacts/" 
+          (click)="toggleNavbar()">CONTACT US</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/">KENYAN LIFESTYLE</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,24 +68,24 @@
           <li class="nav-item">
               <a class="nav-link" routerLink="/gallery"  routerLinkActive="active" (click)="toggleNavbar()">GALLERY</a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" routerLink="/contacts"  routerLinkActive="active" (click)="toggleNavbar()">CONTACT US</a>
-          </li> -->
+          </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </div>
 
 <router-outlet></router-outlet>
 
 <div class="container-fluid footer">
   <div class="row nav-footer">
-    <ul><a class="nav-link" routerLink="/">ALL</a>
+    <!-- <ul><a class="nav-link" routerLink="/">ALL</a>
       <li><a class="nav-link" routerLink="/tops">Tops</a></li>
       <li><a class="nav-link" routerLink="/pants">Pants</a></li>
       <li><a class="nav-link" routerLink="/accessories">Accessories</a></li>
-    </ul>
+    </ul> -->
     <ul><a class="nav-link" routerLink="/men">MEN</a>
       <li><a class="nav-link" routerLink="/men/tops">Tops</a></li>
       <li><a class="nav-link" routerLink="/men/pants">Pants</a></li>
