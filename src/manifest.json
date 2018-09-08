@@ -1,7 +1,8 @@
 {
-  "name": "ng-lifestyle",
-  "short_name": "ng-lifestyle",
-  "theme_color": "#1976d2",
+  "name": "The Kenyan Lifestyle",
+  "short_name": "Kenyan Lifestyle",
+  "description": "The Kenyan Lifestyle app is an app that improves the accessibility of Kenyan Lifestyle's products to its customers",
+  "theme_color": "rgb(8, 142, 145)",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
@@ -18,8 +19,8 @@
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon-128x128.png",
-      "sizes": "128x128",
+      "src": "assets/icons/icon-120x120.png",
+      "sizes": "120x120",
       "type": "image/png"
     },
     {
@@ -38,13 +39,8 @@
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/icon-512x512.png",
-      "sizes": "512x512",
+      "src": "assets/icons/icon-310x310.png",
+      "sizes": "310x310",
       "type": "image/png"
     }
   ]

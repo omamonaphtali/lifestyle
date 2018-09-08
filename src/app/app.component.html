@@ -6,13 +6,13 @@
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/">KENYAN LIFESTYLE</a>
+    <a class="navbar-brand" routerLink="/" (click)="toggleNavbar()">KENYAN LIFESTYLE</a>
     <button class="navbar-toggler" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav" [ngClass]="{ 'show': navbarOpen }">
       <div class="nav nav-pills nav-fill">
-        <div class="navbar-nav">
+        <div class="navbar-nav text-center">
           <a class="nav-item nav-link" routerLink="/men/" 
           (click)="toggleNavbar()" routerLinkActive="nav-link-active">MEN</a>
           <a class="nav-item nav-link" routerLink="/women/" 

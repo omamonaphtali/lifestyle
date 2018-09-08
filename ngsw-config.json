@@ -6,7 +6,7 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
+          "/favicon.png",
           "/index.html",
           "/*.css",
           "/*.js"
@@ -20,6 +20,18 @@
         "files": [
           "/assets/**"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "thumbs",
+      "urls": ["https://res.cloudinary.com/jaredomamo/image/upload/v1536178405/kenyan%20lifestyle/**"],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "1m",
+        "strategy": "performance"
       }
     }
   ]
