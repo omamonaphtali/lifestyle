@@ -44,14 +44,14 @@ a:hover {
 .side-nav nav .nav-link {
     margin: 10px 5px;
     padding: 5px;
-    border: 2px blue solid;
+    border: 2px rgb(8, 142, 145) solid;
     border-radius: 5px;
-    color: blue;
+    color: rgb(8, 142, 145);
     font-weight: bold;
 }
 .side-nav nav .nav-link:hover,
 .side-nav nav .nav-link:active {
-    background-color: blue;
+    background-color: rgb(8, 142, 145);
     color: white;
 }
 @media screen and (max-width:767px) {
