@@ -1,57 +1,11 @@
 <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178405/kenyan%20lifestyle/images/kl-ig-08.png">
-        <div class="card-body">
-          <p class="card-text">Bold Print Shirt</p>
-          <p>$ 20.00</p>
-        </div>
+  <div class="col-md-4" *ngFor="let item of products">
+    <div class="card">
+      <img class="card-img-top" [src]="item.imageMap">
+      <div class="card-body">
+        <p class="card-text">{{ item.title }}</p>
+        <p>$ {{ item.price }}</p>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178433/kenyan%20lifestyle/images/kl-ig-13.png">
-        <div class="card-body">
-          <p class="card-text">Floral Print Baseball Shirt</p>
-          <p>$ 25.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178419/kenyan%20lifestyle/images/kl-ig-10.png">
-        <div class="card-body">
-          <p class="card-text">Striped Shirt</p>
-          <p>$ 23.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178406/kenyan%20lifestyle/images/kl-ig-02.png">
-        <div class="card-body">
-          <p class="card-text">Retro-print Shirt</p>
-          <p>$ 23.50</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178437/kenyan%20lifestyle/images/kl-ig-12.png">
-        <div class="card-body">
-          <p class="card-text">Striped Blue Jacket</p>
-          <p>$ 18.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178389/kenyan%20lifestyle/images/kl-ig-05.png">
-        <div class="card-body">
-          <p class="card-text">Checked Shirt</p>
-          <p>$ 22.50</p>
-        </div>
-      </div>
-    </div>
-  <!-- </div> -->
+  </div>
 </div>
