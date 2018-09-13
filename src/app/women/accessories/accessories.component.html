@@ -1,84 +1,12 @@
 <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://res.cloudinary.com/jaredomamo/image/upload/v1536178405/kenyan%20lifestyle/images/kl-ig-07.png">
-        <div class="card-body">
-          <p class="card-text">Pink sling bag printed Kenyan Lifestyle in black</p>
-          <p>$ 15.00</p>
-        </div>
+  <div class="col-md-4"
+    *ngFor="let item of products">
+    <div class="card">
+      <img class="card-img-top" [src]="item.imageMap">
+      <div class="card-body">
+        <p class="card-text">{{ item.title }}</p>
+        <p>$ {{ item.price }}</p>
       </div>
     </div>
-    <!-- <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife02.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife11.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife04.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife05.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife06.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife07.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife08.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="assets/klife09.jpg">
-        <div class="card-body">
-          <p class="card-text">White T-Shirt</p>
-          <p>$ 15.00</p>
-        </div>
-      </div>
-    </div> -->
-  <!-- </div> -->
+  </div>
 </div>
