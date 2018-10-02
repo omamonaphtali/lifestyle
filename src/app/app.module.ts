@@ -12,6 +12,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProductsService } from './shared/products.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { environment } from '../environments/environment';
     KidsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

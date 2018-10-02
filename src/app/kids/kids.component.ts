@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-kids',
-  templateUrl: './kids.component.html',
-  styleUrls: ['./kids.component.css']
+  templateUrl: './kids.component.html'
 })
 export class KidsComponent implements OnInit {
 
