@@ -20,7 +20,7 @@ a:hover {
     font-size: 20px;
 }
 #banner {
-    height: 300px;
+    height: 200px;
     width: 100%;
     overflow: hidden;
     background: whitesmoke url(https://res.cloudinary.com/jaredomamo/image/upload/v1534851475/kenyan%20lifestyle/IMG_8836.jpg) cover center no-repeat fixed;
@@ -123,13 +123,11 @@ a:hover {
 ========================*/
 @media screen and (max-width:600px) {
     #banner, #banner img {
-        max-height: 300px;
+        max-height: 250px;
     }
 }
 @media screen and (min-width:421px) {
-    #banner {
-        max-height: 300px;
-    }
+    
 }
 @media screen and (min-width:768px) {
     .row .col-md-10 {

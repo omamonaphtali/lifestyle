@@ -1,13 +1,22 @@
 #banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     padding: auto;
     width: 100%;
-    background-color: whitesmoke;
+    background: whitesmoke;
+}
+@media screen and (min-width:421px) {
+    #banner {
+        max-height: 200px;
+    }
 }
 @media screen and (min-width:577px) 
     {#banner {
         min-height: 500px;
         height: 500px;
+        background: whitesmoke;
     }
     .col-md-4 {
         margin-top: 10px;
