@@ -1,4 +1,4 @@
-django==2.0.4
+django==2.2.13
 pip==10.0.1
 pytz==2018.5
 setuptools==39.2.0
